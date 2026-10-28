@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Wahdat Poultry</title>
+  <meta name="description" content="Contact Wahdat Poultry: sales, export, distribution, investor relations and farm licensing.">
+  <meta name="theme-color" content="#0c2418">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script type="module">
+    import { bindForm } from '/assets/js/app.js';
+    const f = document.getElementById('contact-form');
+    const t = new URLSearchParams(location.search).get('topic');
+    if (t) [...f.topic.options].forEach((o) => { if (o.text === t) o.selected = true; });
+    bindForm(f, '/api/contact');
+  </script>
+</head>
+<body data-dark>
+<main>
+  <section class="page-hero">
+    <div class="blob"></div><div class="grain"></div>
+    <div class="container">
+      <div class="crumbs">Contact</div>
+      <h1 class="h1" data-reveal>Let's <span class="italic yolk-text">talk eggs.</span></h1>
+      <p class="lead" data-reveal>Sales, export, distribution, investor relations or partner farming — pick a topic and we'll route you to the right team.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split split--top">
+      <div class="stack" style="--stack:16px" data-stagger>
+        <div class="card"><h3>Head office</h3><p>G-2, Shah Tower, E-11/2<br>Islamabad, Pakistan</p></div>
+        <div class="card"><h3>Phone</h3><p><a class="link-underline" href="tel:+9251111924328">+92 51 111 924 328</a><br><a class="link-underline" href="tel:+923239174355">+92 323 917 4355</a></p></div>
+        <div class="card"><h3>Email</h3><p><a class="link-underline" href="mailto:info@wahdatfarms.com">info@wahdatfarms.com</a></p></div>
+        <div class="card"><h3>Export buyers</h3><p>Use the <a class="link-underline" style="font-weight:700;color:var(--forest-500)" href="/export#rfq">export RFQ form</a> for faster quotes.</p></div>
+      </div>
+      <form class="form form-panel" id="contact-form" data-reveal="right" novalidate>
+        <div class="field"><label for="name">Name *</label><input id="name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field field--full"><label for="topic">Topic *</label>
+          <select id="topic" name="topic" required><option>Retail &amp; distribution</option><option>Export</option><option>HoReCa supply</option><option>Investor relations</option><option>Farm licensing</option><option>Careers</option><option>Other</option></select></div>
+        <div class="field field--full"><label for="message">Message *</label><textarea id="message" name="message" required></textarea></div>
+        <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="field--full"><button class="btn" type="submit">Send message <span class="arrow">→</span></button></div>
+        <p class="form-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+</body>
+</html>

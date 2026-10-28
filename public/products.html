@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products — Wahdat Poultry</title>
+  <meta name="description" content="Farm Fresh Eggs range: Omega-3, Classic, Golden and Brown eggs, HoReCa cases and pasteurised liquid egg.">
+  <meta name="theme-color" content="#0c2418">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script type="module" src="/assets/js/app.js"></script>
+  <style>
+    .range-row { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px, 6vw, 90px); align-items: center; padding-block: clamp(60px, 8vw, 110px); border-bottom: 1px solid var(--line); }
+    .range-row:nth-child(even) .range-art { order: 2; }
+    .range-art { position: relative; aspect-ratio: 1; border-radius: var(--radius-lg); display: grid; place-items: center; overflow: hidden; }
+    .range-art .egg-art { width: 42%; filter: drop-shadow(0 40px 30px rgba(0,0,0,.25)); }
+    .range-art .egg-art svg { animation: bob 7s ease-in-out infinite; }
+    .range-art::before { content: ""; position: absolute; width: 70%; aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.5); }
+    .range-art .chip { position: absolute; left: 22px; bottom: 22px; background: var(--white); border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 800; box-shadow: var(--shadow-sm); }
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
+    .facts div { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; font-size: 14px; }
+    .facts b { display: block; font-family: var(--font-display); font-size: 22px; font-weight: 500; }
+    @media (max-width: 860px) { .range-row { grid-template-columns: 1fr; } .range-row:nth-child(even) .range-art { order: 0; } .facts { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body data-dark>
+<main>
+  <section class="page-hero">
+    <div class="blob"></div><div class="grain"></div>
+    <div class="container">
+      <div class="crumbs">Products</div>
+      <h1 class="h1" data-reveal>The <span class="italic yolk-text">Farm Fresh</span> range.</h1>
+      <p class="lead" data-reveal>Four retail lines, a food-service case and a liquid-egg line in development — all from our own flocks.</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <article class="range-row" id="omega">
+      <div class="range-art" style="background:#dfe9d4" data-reveal="left"><div class="egg-art" data-egg="omega"></div><span class="chip">Best seller</span></div>
+      <div data-reveal="right">
+        <span class="eyebrow">Omega-3 enriched</span>
+        <h2 class="h2" style="margin-top:16px">Heart-smart eggs.</h2>
+        <p class="lead" style="margin-top:18px">Laid by hens on a specially formulated diet that raises the Omega-3 fatty-acid content of every yolk. Our flagship and the line we export most.</p>
+        <div class="facts"><div><b>6 · 12</b>Retail packs</div><div><b>L</b>Grade</div><div><b>Export</b>Available</div></div>
+      </div>
+    </article>
+    <article class="range-row" id="classic">
+      <div class="range-art" style="background:var(--shell)" data-reveal="right"><div class="egg-art" data-egg="white"></div><span class="chip">Everyday</span></div>
+      <div data-reveal="left">
+        <span class="eyebrow">Classic</span>
+        <h2 class="h2" style="margin-top:16px">The daily staple, done properly.</h2>
+        <p class="lead" style="margin-top:18px">Graded and packed white eggs for households, bakeries and kitchens — the volume backbone of our 1,500-outlet distribution.</p>
+        <div class="facts"><div><b>12 · 30</b>Retail packs</div><div><b>360</b>HoReCa case</div><div><b>M · L · XL</b>Grades</div></div>
+      </div>
+    </article>
+    <article class="range-row" id="golden">
+      <div class="range-art" style="background:#ffe4a6" data-reveal="left"><div class="egg-art" data-egg="golden"></div><span class="chip">Vitamin enriched</span></div>
+      <div data-reveal="right">
+        <span class="eyebrow">Golden</span>
+        <h2 class="h2" style="margin-top:16px">Richer yolks, extra vitamins.</h2>
+        <p class="lead" style="margin-top:18px">A vitamin-enriched egg with a deep golden yolk, made for families who want more from breakfast.</p>
+        <div class="facts"><div><b>12</b>Retail pack</div><div><b>L</b>Grade</div><div><b>Export</b>Available</div></div>
+      </div>
+    </article>
+    <article class="range-row" id="brown">
+      <div class="range-art" style="background:#efd2b8" data-reveal="right"><div class="egg-art" data-egg="brown"></div><span class="chip">Premium</span></div>
+      <div data-reveal="left">
+        <span class="eyebrow">Brown</span>
+        <h2 class="h2" style="margin-top:16px">A premium shelf favourite.</h2>
+        <p class="lead" style="margin-top:18px">Brown-shell eggs from dedicated flocks for premium retail and modern trade.</p>
+        <div class="facts"><div><b>12</b>Retail pack</div><div><b>M · L</b>Grades</div><div><b>Export</b>Available</div></div>
+      </div>
+    </article>
+    <article class="range-row" id="liquid" style="border-bottom:0">
+      <div class="range-art" style="background:#d9e4ec" data-reveal="left">
+        <svg viewBox="0 0 120 160" style="width:34%;position:relative;filter:drop-shadow(0 30px 24px rgba(0,0,0,.2))" aria-hidden="true"><rect x="18" y="26" width="84" height="128" rx="10" fill="#fff"/><rect x="40" y="8" width="40" height="22" rx="4" fill="#0c2418"/><rect x="18" y="80" width="84" height="74" rx="10" fill="#f6b40e"/><text x="60" y="122" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="13" fill="#0c2418">LIQUID</text></svg>
+        <span class="chip">In development</span></div>
+      <div data-reveal="right">
+        <span class="eyebrow">Pasteurised liquid egg</span>
+        <h2 class="h2" style="margin-top:16px">Ready for industry.</h2>
+        <p class="lead" style="margin-top:18px">A dedicated pasteurisation plant — Rs270 million of our IPO proceeds — will supply bakeries, QSR kitchens, airlines and food processors with safe, ready-to-pour egg.</p>
+        <div class="facts"><div><b>1 kg</b>Food service</div><div><b>10 kg</b>Bag-in-box</div><div><b>IBC</b>Industrial</div></div>
+        <a class="btn" href="/export#rfq" style="margin-top:28px">Register interest <span class="arrow">→</span></a>
+      </div>
+    </article>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band" data-reveal="scale">
+        <span class="eyebrow" style="color:var(--forest-900)">Retailers &amp; distributors in Pakistan</span>
+        <h2 class="h2" style="margin-top:16px">Order trade stock online.</h2>
+        <a class="btn" href="/portal">Open the distributor portal <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quality &amp; Traceability — Wahdat Poultry</title>
+  <meta name="description" content="Trace any Farm Fresh carton by batch code: farm, flock, lay date, pack date and QC result. ISO 22000 and HACCP certified.">
+  <meta name="theme-color" content="#0c2418">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script type="module" src="/assets/js/app.js"></script>
+  <script type="module" src="/assets/js/trace.js"></script>
+</head>
+<body data-dark>
+<main>
+  <section class="page-hero">
+    <div class="blob"></div><div class="grain"></div>
+    <div class="container">
+      <div class="crumbs">Quality &amp; traceability</div>
+      <h1 class="h1" data-reveal>Know exactly<br><span class="italic yolk-text">where it came from.</span></h1>
+      <p class="lead" data-reveal>Every Farm Fresh carton carries a batch code. Enter it below — or scan the QR on the pack — to see its farm, flock, lay date and quality result.</p>
+      <form class="trace-box" id="trace-form" style="margin-top:40px" data-reveal>
+        <label for="code" class="hp">Batch code</label>
+        <input id="code" name="code" placeholder="e.g. WPF-2610-A1" autocomplete="off" required pattern="[A-Za-z0-9\-]{3,32}">
+        <button class="btn btn--yolk" type="submit">Trace <span class="arrow">→</span></button>
+      </form>
+      <p style="margin-top:14px;font-size:14px;opacity:.7" data-reveal>Try demo codes: <a href="?code=WPF-2610-A1" class="link-underline">WPF-2610-A1</a> · <a href="?code=WPF-2610-EX1" class="link-underline">WPF-2610-EX1</a></p>
+    </div>
+  </section>
+
+  <section class="section section--tight" id="result-wrap" hidden>
+    <div class="container"><div id="trace-result"></div></div>
+  </section>
+
+  <section class="section section--shell">
+    <div class="container">
+      <span class="eyebrow" data-reveal>Certifications</span>
+      <h2 class="h2" style="margin:18px 0 44px" data-reveal>Audited, documented, ready.</h2>
+      <div class="grid grid-2" data-stagger>
+        <div class="cert"><div class="cert-seal">ISO<br>22000</div><div><h4>ISO 22000 — Food safety management</h4><p>International food-safety management system covering production through packing.</p></div></div>
+        <div class="cert"><div class="cert-seal">HACCP</div><div><h4>HACCP</h4><p>Hazard analysis and critical control points across farms and grading.</p></div></div>
+        <div class="cert"><div class="cert-seal">HALAL</div><div><h4>Halal certification</h4><p>Halal documentation issued per destination market for GCC shipments.</p></div></div>
+        <div class="cert"><div class="cert-seal">LAB</div><div><h4>Independent lab analysis</h4><p>Third-party nutrition and safety testing, including enrichment verification.</p></div></div>
+      </div>
+      <p class="muted" style="font-size:13px;margin-top:20px">Certificate copies, scopes and validity dates are shared with buyers on request.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <span class="eyebrow" data-reveal>Quality controls</span>
+        <h2 class="h2" style="margin-top:18px" data-reveal>Checked before it's packed.</h2>
+        <p class="lead" data-reveal>Batches that do not pass are held or rejected in the system — so they cannot be dispatched.</p>
+      </div>
+      <div class="grid" data-stagger>
+        <div class="card"><h3>Flock health</h3><p>Veterinary monitoring and vaccination records per flock.</p></div>
+        <div class="card"><h3>Egg inspection</h3><p>Weight grading, shell-integrity and visual checks on the line.</p></div>
+        <div class="card"><h3>Batch release</h3><p>Only QC-passed batches can be assigned to orders and export lots.</p></div>
+        <div class="card"><h3>Cold chain</h3><p>Temperature-controlled storage and reefer logging for export.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

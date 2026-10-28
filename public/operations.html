@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Farm to Shelf — Wahdat Poultry</title>
+  <meta name="description" content="How Wahdat's vertically integrated system works: feed, automated layer farms, grading, packaging, distribution and export.">
+  <meta name="theme-color" content="#0c2418">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script type="module" src="/assets/js/app.js"></script>
+  <style>
+    .flow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; position: relative; margin-top: 60px; }
+    .flow::before { content: ""; position: absolute; top: 34px; left: 8%; right: 8%; height: 2px; background: repeating-linear-gradient(90deg, var(--yolk) 0 10px, transparent 10px 18px); background-size: 36px 2px; animation: flow 1.2s linear infinite; }
+    .flow-step { text-align: center; padding: 0 10px; position: relative; }
+    .flow-step .node { width: 70px; height: 70px; border-radius: 50%; margin: 0 auto 18px; display: grid; place-items: center; background: var(--forest-900); color: var(--yolk); position: relative; z-index: 1; box-shadow: 0 0 0 8px var(--cream); transition: transform .5s var(--ease-out); }
+    .flow-step:hover .node { transform: scale(1.12) rotate(-6deg); }
+    .flow-step h3 { font-size: 20px; } .flow-step p { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+    @keyframes flow { to { background-position: 36px 0; } }
+    .capacity { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .farm { border-radius: var(--radius); padding: 26px; background: rgba(251,246,236,.05); border: 1px solid rgba(251,246,236,.12); }
+    .farm .ring { width: 90px; height: 90px; margin-bottom: 18px; }
+    .farm .ring circle { fill: none; stroke-width: 8; }
+    .farm .ring .track { stroke: rgba(251,246,236,.1); }
+    .farm .ring .val { stroke: var(--yolk); stroke-linecap: round; stroke-dasharray: 245; stroke-dashoffset: 245; transition: stroke-dashoffset 2s var(--ease-out); transform: rotate(-90deg); transform-origin: center; }
+    .farm.is-in .ring .val { stroke-dashoffset: var(--off); }
+    @media (max-width: 960px) { .flow { grid-template-columns: repeat(3, 1fr); row-gap: 40px; } .flow::before { display: none; } .capacity { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .flow, .capacity { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body data-dark>
+<main>
+  <section class="page-hero">
+    <div class="blob"></div><div class="grain"></div>
+    <div class="container">
+      <div class="crumbs">Farm to shelf</div>
+      <h1 class="h1" data-reveal>Every step,<br><span class="italic yolk-text">under one roof.</span></h1>
+      <p class="lead" data-reveal>Vertical integration is our quality system. Feed, flocks, grading, packaging and distribution are all run by Wahdat — so one standard holds from the first grain to the final shelf.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow" data-reveal>The integrated chain</span>
+      <h2 class="h2" style="margin-top:18px" data-reveal>Six stages. One standard.</h2>
+      <div class="flow" data-stagger>
+        <div class="flow-step"><div class="node"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V8M12 8c0-3 2-5 5-6 0 3-2 5-5 6zM12 12c0-3-2-5-5-6 0 3 2 5 5 6z"/></svg></div><h3>Feed</h3><p>Own formulations, including enrichment premixes.</p></div>
+        <div class="flow-step"><div class="node"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9l9-6 9 6v12z"/><path d="M9 21v-6h6v6"/></svg></div><h3>Layer farms</h3><p>Four automated farms, ~430k birds.</p></div>
+        <div class="flow-step"><div class="node"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg></div><h3>Grading</h3><p>Weighed, sorted and inspected.</p></div>
+        <div class="flow-step"><div class="node"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg></div><h3>Packaging</h3><p>Own plant; batch-coded cartons.</p></div>
+        <div class="flow-step"><div class="node"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="7" width="14" height="10"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="5" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg></div><h3>Distribution</h3><p>1,500+ outlets, QSR supply.</p></div>
+        <div class="flow-step"><div class="node"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"/></svg></div><h3>Export</h3><p>Reefer shipments from Karachi.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container">
+      <div class="split" style="align-items:end;margin-bottom:48px">
+        <div><span class="eyebrow" data-reveal>Capacity</span><h2 class="h2" style="margin-top:18px" data-reveal>Scale you can plan around.</h2></div>
+        <p class="lead" data-reveal>Rings show today's figures against the next stage of growth funded by our IPO.</p>
+      </div>
+      <div class="capacity" data-stagger>
+        <div class="farm" data-reveal style="--off:46"><svg class="ring" viewBox="0 0 90 90"><circle class="track" cx="45" cy="45" r="39"/><circle class="val" cx="45" cy="45" r="39"/></svg><div class="stat-num" style="font-size:42px"><span data-count="430000">0</span></div><p class="muted">Bird capacity today → ~530,000 with the IPO-funded flock</p></div>
+        <div class="farm" data-reveal style="--off:0"><svg class="ring" viewBox="0 0 90 90"><circle class="track" cx="45" cy="45" r="39"/><circle class="val" cx="45" cy="45" r="39"/></svg><div class="stat-num" style="font-size:42px"><span data-count="400000">0</span></div><p class="muted">Eggs graded and packed per day</p></div>
+        <div class="farm" data-reveal style="--off:0"><svg class="ring" viewBox="0 0 90 90"><circle class="track" cx="45" cy="45" r="39"/><circle class="val" cx="45" cy="45" r="39"/></svg><div class="stat-num" style="font-size:42px"><span data-count="4">0</span></div><p class="muted">Automated layer farms</p></div>
+        <div class="farm" data-reveal style="--off:0"><svg class="ring" viewBox="0 0 90 90"><circle class="track" cx="45" cy="45" r="39"/><circle class="val" cx="45" cy="45" r="39"/></svg><div class="stat-num" style="font-size:42px"><span data-count="1500" data-suffix="+">0</span></div><p class="muted">Retail outlets served</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <span class="eyebrow" data-reveal>Growth model</span>
+        <h2 class="h2" style="margin-top:18px" data-reveal>Farm licensing.</h2>
+        <p class="lead" data-reveal>Part of our IPO capital builds a licensing model: partner farmers adopt Wahdat housing, feed and biosecurity standards, and we guarantee offtake under the Farm Fresh brand. It adds supply for export without diluting quality.</p>
+        <a class="btn" href="/contact?topic=Farm%20licensing" style="margin-top:28px" data-reveal>Become a partner farm <span class="arrow">→</span></a>
+      </div>
+      <div class="grid" data-stagger>
+        <div class="card"><h3>Standards</h3><p>Housing, vaccination, feed and biosecurity protocols supplied by Wahdat.</p></div>
+        <div class="card"><h3>Offtake</h3><p>Guaranteed purchase of compliant eggs for grading and packing at Wahdat.</p></div>
+        <div class="card"><h3>Traceability</h3><p>Partner flocks carry their own farm codes inside our batch system.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

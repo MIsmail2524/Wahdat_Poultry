@@ -258,7 +258,7 @@ async function serveStatic(req, res, pathname) {
     const ext = extname(file);
     send(res, 200, body, {
       'Content-Type': MIME[ext] || 'application/octet-stream',
-      'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=3600',
+      'Cache-Control': process.env.NODE_ENV === 'production' && ext !== '.html' ? 'public, max-age=3600' : 'no-cache',
     });
   } catch { send(res, 500, 'Server error'); }
 }

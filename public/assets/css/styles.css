@@ -371,8 +371,8 @@ tbody tr:hover { background: #fdf8ec; }
 [data-reveal="right"] { transform: translateX(50px); }
 [data-reveal="scale"] { transform: scale(.92); }
 [data-reveal].is-in { opacity: 1; transform: none; }
-.clip-reveal { clip-path: inset(100% 0 0 0); transition: clip-path 1.4s var(--ease-out); }
-.clip-reveal.is-in { clip-path: inset(0 0 0 0); }
+.clip-reveal { opacity: 0; transform: translateY(60px) scale(.96); transition: opacity 1.2s var(--ease-out), transform 1.4s var(--ease-out); }
+.clip-reveal.is-in { opacity: 1; transform: none; }
 
 .page-transition { position: fixed; inset: 0; z-index: 300; background: var(--yolk); transform: scaleY(0); transform-origin: 50% 100%; pointer-events: none; transition: transform .6s var(--ease-out); }
 .page-transition.out { transform: scaleY(1); }
@@ -416,7 +416,7 @@ tbody tr:hover { background: #fdf8ec; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
-  [data-reveal], .clip-reveal { opacity: 1; transform: none; clip-path: none; }
+  [data-reveal], .clip-reveal { opacity: 1; transform: none; }
   .journey { height: auto; } .journey-sticky { position: static; height: auto; padding-block: 90px; }
   .journey-track { flex-wrap: wrap; transform: none !important; }
 }

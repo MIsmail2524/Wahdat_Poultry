@@ -263,7 +263,7 @@ export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&a
 header(); footer();
 document.querySelectorAll('[data-egg]').forEach((el) => { el.innerHTML = egg(el.dataset.egg); });
 initHeader(); initReveal(); initCounters(); initMagnetic(); initTilt(); initParallax(); initJourney(); initWordReveal(); initPageTransitions();
-requestAnimationFrame(() => setTimeout(() => {
+setTimeout(() => {
   document.documentElement.classList.remove('preload');
   document.documentElement.classList.add('is-loaded');
-}, 60));
+}, 60);

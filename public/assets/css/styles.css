@@ -427,3 +427,6 @@ tbody tr:hover { background: #fdf8ec; }
 .batch-form { margin-bottom: 22px; grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 860px) { .batch-form { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .batch-form { grid-template-columns: 1fr; } .batch-form .field { grid-column: auto !important; } }
+html, body { overflow-x: clip; }
+.split > *, .grid > *, .hero-grid > *, .calc > * { min-width: 0; }
+.bar-row > span { overflow-wrap: anywhere; }

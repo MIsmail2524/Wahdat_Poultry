@@ -420,3 +420,10 @@ tbody tr:hover { background: #fdf8ec; }
   .journey { height: auto; } .journey-sticky { position: static; height: auto; padding-block: 90px; }
   .journey-track { flex-wrap: wrap; transform: none !important; }
 }
+
+.order-grid { gap: 24px; grid-template-columns: 1.5fr 1fr; }
+.admin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 860px) { .order-grid, .admin-grid { grid-template-columns: 1fr; } #checkout { position: static !important; } }
+.batch-form { margin-bottom: 22px; grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 860px) { .batch-form { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .batch-form { grid-template-columns: 1fr; } .batch-form .field { grid-column: auto !important; } }

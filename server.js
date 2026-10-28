@@ -66,9 +66,8 @@ function required(obj, fields) {
   const missing = fields.filter((f) => !str(obj[f]));
   if (missing.length) throw Object.assign(new Error(`Missing: ${missing.join(', ')}`), { status: 422 });
 }
-function makeRef(prefix, table) {
-  const row = db.prepare(`SELECT COUNT(*) AS n FROM ${table}`).get();
-  return `${prefix}-${String(1001 + Number(row.n) + Math.floor(Math.random() * 9)).padStart(4, '0')}${randomBytes(1).toString('hex').toUpperCase()}`;
+function makeRef(prefix) {
+  return `${prefix}-${Date.now().toString(36).slice(-5).toUpperCase()}${randomBytes(1).toString('hex').toUpperCase()}`;
 }
 
 // naive per-IP rate limit for public POST endpoints
@@ -113,7 +112,7 @@ route('POST', '/api/inquiries', async (req) => {
   if (str(b.website)) return { ok: true }; // honeypot
   required(b, ['company', 'contact_name', 'email', 'country', 'product', 'volume']);
   if (!EMAIL_RE.test(str(b.email))) throw Object.assign(new Error('Invalid email'), { status: 422 });
-  const ref = makeRef('RFQ', 'inquiries');
+  const ref = makeRef('RFQ');
   db.prepare(`INSERT INTO inquiries (ref, company, contact_name, email, phone, country, buyer_type, product, volume, frequency, incoterm, port, message)
               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
     .run(ref, str(b.company, 120), str(b.contact_name, 120), str(b.email, 160), str(b.phone, 40) || null, str(b.country, 80),
@@ -176,7 +175,7 @@ route('POST', '/api/orders', async (req) => {
     return { p, qty };
   });
   const total = priced.reduce((s, { p, qty }) => s + p.trade_price_pkr * qty, 0);
-  const ref = makeRef('ORD', 'orders');
+  const ref = makeRef('ORD');
   db.exec('BEGIN');
   try {
     const o = db.prepare('INSERT INTO orders (ref, user_id, delivery_city, delivery_date, notes, total_pkr) VALUES (?, ?, ?, ?, ?, ?)')

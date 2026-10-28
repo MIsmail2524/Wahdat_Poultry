@@ -430,3 +430,7 @@ tbody tr:hover { background: #fdf8ec; }
 html, body { overflow-x: clip; }
 .split > *, .grid > *, .hero-grid > *, .calc > * { min-width: 0; }
 .bar-row > span { overflow-wrap: anywhere; }
+
+.wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 95; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: #25d366; color: #fff; box-shadow: 0 14px 30px -10px rgba(37, 211, 102, .7); transition: transform .4s var(--ease-out); }
+.wa-float:hover { transform: scale(1.08) rotate(-6deg); }
+@media print { .site-header, .wa-float, .site-footer, .progress, .marquee { display: none !important; } [data-reveal], .clip-reveal { opacity: 1 !important; transform: none !important; } }

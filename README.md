@@ -63,6 +63,22 @@ Demo batch codes: `WPF-2610-A1`, `WPF-2610-B2`, `WPF-2610-EX1`, `WPF-2610-C4` (o
 | PATCH | `/api/admin/{inquiries,orders,batches}/:id` | admin |
 | POST | `/api/admin/batches` | admin |
 
+## Security
+
+See [SECURITY.md](SECURITY.md) for the attack results and fixes. Key environment variables:
+
+| Variable | Purpose |
+|---|---|
+| `NODE_ENV=production` | Secure cookies, HSTS, no demo accounts |
+| `SEED_ADMIN_PASSWORD` | Admin password for first seed |
+| `DB_PATH` | SQLite file location |
+| `PORT` | HTTP port |
+
+## Recently added
+- CSV export of RFQs and orders from the operations console (with formula-injection guard).
+- Floating WhatsApp click-to-chat on every page.
+- `sitemap.xml` and print styles for spec pages.
+
 ## Production roadmap
 
 1. Real product photography and farm video; replace SVG placeholders.
@@ -71,6 +87,12 @@ Demo batch codes: `WPF-2610-A1`, `WPF-2610-B2`, `WPF-2610-EX1`, `WPF-2610-C4` (o
 4. Persistent session store, HTTPS, CSRF tokens, audit log; move to Postgres if multi-instance.
 5. Live PSX price widget and document library for investor relations.
 6. Printed QR codes on cartons linked to `/quality?code=`.
+7. **Export document generator** — proforma invoice, packing list and certificate checklist as PDF from an RFQ.
+8. **Reefer IoT feed** — live container temperature on the batch trace page for export buyers.
+9. **Consumer subscription** — weekly Farm Fresh home delivery in Islamabad/Lahore with WhatsApp reminders.
+10. **Retailer credit & route planning** — credit limits per distributor and optimised delivery routes.
+11. **Recipe & nutrition hub** — SEO content for Omega-3 eggs to lift organic traffic.
+12. **ESG dashboard** — feed efficiency, packaging and energy metrics for investors and Gulf retailers.
 
 ## Sources
 

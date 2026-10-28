@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /admin
 Disallow: /portal
 Disallow: /api/
+Sitemap: https://wahdatpoultryfarm.com/sitemap.xml

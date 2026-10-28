@@ -16,7 +16,11 @@ async function boot() {
   app.innerHTML = `
     <div class="app-head">
       <div><span class="eyebrow">Operations console</span><h1 class="h2" style="margin-top:10px">Good day, ${esc(me.name)}</h1></div>
-      <button class="btn btn--ghost btn--sm" id="logout">Sign out</button>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn btn--ghost btn--sm" href="/api/admin/export/inquiries.csv" download>RFQs CSV</a>
+        <a class="btn btn--ghost btn--sm" href="/api/admin/export/orders.csv" download>Orders CSV</a>
+        <button class="btn btn--ghost btn--sm" id="logout">Sign out</button>
+      </div>
     </div>
     <div class="tabs" role="tablist">
       <button class="on" data-tab="overview">Overview</button><button data-tab="inquiries">Export RFQs</button>

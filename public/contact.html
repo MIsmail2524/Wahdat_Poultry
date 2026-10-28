@@ -10,13 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css?v=3">
-  <script type="module">
-    import { bindForm } from '/assets/js/app.js';
-    const f = document.getElementById('contact-form');
-    const t = new URLSearchParams(location.search).get('topic');
-    if (t) [...f.topic.options].forEach((o) => { if (o.text === t) o.selected = true; });
-    bindForm(f, '/api/contact');
-  </script>
+  <script type="module" src="/assets/js/contact.js"></script>
 </head>
 <body data-dark>
 <main>

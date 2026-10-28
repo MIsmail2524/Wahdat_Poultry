@@ -103,10 +103,16 @@ function seed(db) {
   const insUser = db.prepare(
     'INSERT INTO users (email, password_hash, name, company, city, role) VALUES (?, ?, ?, ?, ?, ?)'
   );
-  // Demo accounts — documented in README.md. Change before any real deployment.
-  insUser.run('admin@demo.test', hashPassword('admin123'), 'Operations Admin', 'Wahdat (demo)', 'Islamabad', 'admin');
-  insUser.run('distributor@demo.test', hashPassword('dist123'), 'Ali Traders', 'Ali Traders (demo)', 'Lahore', 'distributor');
-  insUser.run('karachi@demo.test', hashPassword('dist123'), 'Sea View Mart', 'Sea View Mart (demo)', 'Karachi', 'distributor');
+  // Demo accounts — documented in README.md. In production, known demo passwords are never used:
+  // set SEED_ADMIN_PASSWORD, or a random one is generated and printed once to the server log.
+  const prod = process.env.NODE_ENV === 'production';
+  const adminPw = process.env.SEED_ADMIN_PASSWORD || (prod ? randomBytes(12).toString('base64url') : 'admin123');
+  if (prod && !process.env.SEED_ADMIN_PASSWORD) console.log(`[seed] generated admin password: ${adminPw}`);
+  insUser.run('admin@demo.test', hashPassword(adminPw), 'Operations Admin', 'Wahdat (demo)', 'Islamabad', 'admin');
+  if (!prod) {
+    insUser.run('distributor@demo.test', hashPassword('dist123'), 'Ali Traders', 'Ali Traders (demo)', 'Lahore', 'distributor');
+    insUser.run('karachi@demo.test', hashPassword('dist123'), 'Sea View Mart', 'Sea View Mart (demo)', 'Karachi', 'distributor');
+  }
 
   // Trade prices are placeholders for the demo, not real price lists.
   const insProduct = db.prepare(
@@ -148,6 +154,7 @@ function seed(db) {
     'INSERT INTO orders (ref, user_id, delivery_city, delivery_date, notes, total_pkr, status) VALUES (?, ?, ?, ?, ?, ?, ?)'
   );
   const insItem = db.prepare('INSERT INTO order_items (order_id, product_id, qty, unit_price_pkr) VALUES (?, ?, ?, ?)');
+  if (prod) return;
   const o = insOrder.run('ORD-50001', 2, 'Lahore', '2026-10-29', 'Morning delivery please', 20*820 + 40*1350, 'confirmed');
   insItem.run(o.lastInsertRowid, 2, 20, 820);
   insItem.run(o.lastInsertRowid, 4, 40, 1350);
